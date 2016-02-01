@@ -1,1 +1,7 @@
+<<<<<<< .mine
+david esto es un cambio lalalaalalalala
+as    asdasdasdgfhgjghkjhjkhjkhjkhkjhjk||||||| .r20
+david esto es un cambio lalalaalalalala
+=======
 david esto es un cambio lalalaala me cago en todooo
+>>>>>>> .r21

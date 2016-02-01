@@ -1,2 +1,0 @@
-# mandana
-mandana graphics web

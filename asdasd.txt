@@ -1,0 +1,45 @@
+Moviles
+	Marcas
+		modelos
+cojines
+	tipos
+		2
+tazas
+	tipos	
+		2
+Textil
+	tipos
+		sudaderas
+		camisetas
+llaveros
+	tipo 1
+Mandana	wear	
+		
+	
+
+
+
+
+DB
+
+Clientes
+	Nombre y apellidos
+	email
+	telefono
+	password
+	direccion
+	dni
+	
+Pedidos
+	cliente
+	fecha
+	id
+	forma de pago
+	estado
+	
+Productos	
+	
+
+
+
+	

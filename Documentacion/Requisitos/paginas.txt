@@ -1,0 +1,50 @@
+Visible al cliente
+------------------------------------------------------
+
+Index.php
+	-Portada de la web
+	
+Moviles.php
+	-Selecionado la marca del movil muestra un listado de los diferentes modelos de esa marca a selecionar 1
+	-Selecionado el modelo del movil nos lleva a la aplicacion de creacion y personalizacion de la funda
+	
+Cojines.php
+
+Tazas.php
+
+Textil.php
+
+Otrosproductos.php
+
+Mandanawear.php
+
+Mandanacmyk.php	
+
+producto.php
+	-Pagina que muestra las caracterisitcas e informacion del producto a consultar
+
+Usuario.php
+	-Da acceso a la informacion del usuario logueado permitiendo la modificacion del mismo
+	
+Login.php
+	-Formulario para introducir el usuario y la contraseña
+
+Logout.php
+	-Cierre de sesion del usuario logueado
+
+carro.php
+	-Permite ver el contenido selecionado para la compra asi como su modificacion y eliminacion del mismo
+
+
+
+
+
+
+
+Oculto al cliente (Administracion)
+--------------------------------------------------------------
+
+Administracion.php
+	-Se muestra como una opcion tras la identificacion del usuario y si contiene nivel de administrador
+
+

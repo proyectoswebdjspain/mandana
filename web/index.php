@@ -7,6 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="images/favicon.ico" >
+<link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function() {

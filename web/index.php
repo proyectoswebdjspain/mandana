@@ -61,7 +61,11 @@
 		include ("includes/menu.html");
 	?>
 	<main>
-		<p>cuerpo de la web</p>
+		<img src="img/paisaje.png" alt="" />
+		<p>Fundas</p>
+		<img src="img/fundas.png" alt="" />
+		<p>Ropa</p>
+		<img src="img/sudadera.png" alt="" />
 	</main>
     <?php
 		include("includes/footer.html");

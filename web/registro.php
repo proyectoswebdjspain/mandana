@@ -67,31 +67,31 @@
 		<div class="container">
 			<section id="content">
 				<h1>Registrate en nuestro sistema</h1>
-				<form method=”post” id=”form1″>
-						<label for=”name”>Nombre: <span class=”required”>*</span></label><br>
-						<input type=”text” id=”name” name=”name” value=”” placeholder=”José García” required autofocus />
+				<form method="post" id="form1">
+						<label for="name">Nombre: <span class="required">*</span></label><br>
+						<input type="text" id="name" name="name" value="" placeholder="José García" required autofocus />
 					<br>
-						<label for=”email”>Dirección de correo: <span class=”required”>*</span></label><br>
-						<input type=”email” id=”email” name=”email” placeholder=”pepegarcia@ejemplo.com” required />
+						<label for="email">Dirección de correo: <span class="required">*</span></label><br>
+						<input type="email" id="email" name="email" placeholder="pepegarcia@ejemplo.com" required autofocus />
 					<br>
-						<label for=”telefono”>Teléfono: </label><br>
-						<input type=”tel” id=”telefono” name=”telefono” placeholder=”555-12345″ />
+						<label for="telefono">Teléfono: </label><br>
+						<input type="tel" id="telefono" name="telefono" placeholder="555-12345" />
 					<br>
-						<label for=”telefono”>Contraseña: <span class=”required”>*</span></label><br>
-						<input id=”pass” name=”pass” type=”password” required />
+						<label for="pass1">Contraseña: <span class="required">*</span></label><br>
+						<input id="pass1" name="pass" type="password" required />
 					<br>
-						<label for=”telefono”>Repetir contraseña: <span class=”required”>*</span></label><br>
-						<input id=”pass2″ name=”pass2″ type=”password” required />
+						<label for="pass2">Repetir contraseña: <span class="required">*</span></label><br>
+						<input id="pass2" name="pass2" type="password" required />
 					<br>
-						<label for=”opciones”>Opciones: </label><br>
-						<select id=”opciones” name=”opciones”>
-						<option value=”opcion1″>Opción 1</option>
-						<option value=”opcon2″>Opción 2</option>
-						<option value=”opcion3″ >Opción 3</option>
+						<label for="opciones">Opciones: </label><br>
+						<select id="opciones" name="opciones">
+						<option value="opcion1">Opción 1</option>
+						<option value="opcion2">Opción 2</option>
+						<option value="opcion3">Opción 3</option>
 					</select>
 					<br>
 					<input type="submit" value="Enviar" />
-					<p id=”req-field-desc”><span class=”requerido”>*</span> rellenar obligatoriamente</p>
+					<p id="req-field-desc"><span class="requerido">*</span> rellenar obligatoriamente</p>
 				</form>
 			</section><!-- content -->
 		</div><!-- container -->

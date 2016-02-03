@@ -48,10 +48,10 @@ body{
 }
 .cssmenu ul li {
 	float:right;
-	margin-top: 30px;
+	margin-top: 15%;
 }
 .cssmenu .espacio{
-	margin-top:40px;
+	margin-top: 18%;
 }
 .cssmenu ul li a {
 	color: #000;

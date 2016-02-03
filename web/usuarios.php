@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Panel de Administración</title>
+	<title>Panel Usuarios</title>
 	<link rel="shortcut icon" href="images/favicon.ico" >
 	<link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,34 +9,30 @@
 </head>
 
 <body>
-	<header>
-		<nav></nav>
-	</header>
+	<?php
+		$categoria = 2;
+		include("admin/header.php");
+	?>
 	<main>
 		<section>
-			<a href="tienda.php">Tienda</a>
+			<a href="tienda.php?newcat">Añadir Categoria</a>
 		</section>
 		<section>
-			<a href="usuarios.php">Usuarios</a>		
+			<a href="tienda.php?modcat">Modificar Categoria</a>
 		</section>
 		<section>
-			<a href="portada.php">Principal</a>
+			<a href="tienda.php?delcat">Eliminar Categoria</a>
 		</section>
 		<section>
-			<a href="pedidos.php">Pedidos</a>
+			<a href="tienda.php?newpro">Agregar Productos</a>
 		</section>
 		<section>
-			<a href=""></a>
+			<a href="tienda.php?modpro">Modificar Productos</a>		
 		</section>
 		<section>
-			<a href=""></a>
+			<a href="tienda.php?delpro">Eliminar Productos</a>
 		</section>
-		<section>
-			<a href=""></a>
-		</section>
-		<section>
-			<a href=""></a>
-		</section>
+		
 	</main>
 </body>
 </html>

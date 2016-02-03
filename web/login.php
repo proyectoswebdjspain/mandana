@@ -75,7 +75,7 @@
 						<input type="password" placeholder="Contraseña" required="" id="password" />
 					</div>
 					<div>
-						<input type="submit" value="Iniciar Sesión" />
+						<input type="submit" value="Iniciar Sesión" name="iniciar"/>
 						<a href="#">¿Has olvidado tu contraseña?</a>
 						<a href="#">Regístrate</a>
 					</div>

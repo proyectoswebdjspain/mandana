@@ -29,6 +29,12 @@ Usuario.php
 Login.php
 	-Formulario para introducir el usuario y la contraseña
 
+Registro.php
+	-Formulario para crear usuario en la base de datos
+
+recuperar.php
+	-Formulario para recuperar la clave del usuario
+
 Logout.php
 	-Cierre de sesion del usuario logueado
 

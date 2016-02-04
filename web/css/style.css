@@ -34,21 +34,21 @@ body{
 }
 .logo{
 	float:left;
-	width:50%;
+	width:30%;
 	text-align:center;
-	margin:0 auto 0 25%;
+	margin:0 auto 2% 35%;
 }
 .logo a{
 	display:inline-block;
 }
 .cssmenu {
 	float:right;
-	width:20%;
+	width:15%;
 	text-align:right;
 }
 .cssmenu ul li {
 	float:right;
-	margin-top: 15%;
+	margin-top: 12%;
 }
 .cssmenu .espacio{
 	margin-top: 18%;

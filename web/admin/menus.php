@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Panel Tienda</title>
+	<title>Panel Menus</title>
 	<link rel="shortcut icon" href="images/favicon.ico" >
 	<link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

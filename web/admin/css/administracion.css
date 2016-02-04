@@ -40,6 +40,11 @@ section a:hover {
 	
 }
 
+.panel{
+	border-bottom:1px solid black;
+	width:100%;
+}
+
 header {
 	margin-bottom:20px;
 }
@@ -76,3 +81,40 @@ nav ul li a:hover {
 	background:#642EFE;
 	color:white;
 }
+
+.color1 {
+	background:red;
+	
+}
+.color2 {
+	background:orange;
+	
+}
+.color3 {
+	background:cyan;
+	
+}
+.color4 {
+	background:silver;
+	
+}
+.color5{
+	background:gold;
+	
+}
+.color6 {
+	background:green;
+	
+}
+.color7{
+	background:yellow;
+	
+}
+.color8{
+	background:pink;
+	
+}
+
+
+
+

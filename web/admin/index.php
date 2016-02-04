@@ -14,7 +14,7 @@
 	</header>
 	<main>
 		<section>
-			<a href="tienda.php">Tienda</a>
+			<a href="menus.php">Menus</a>
 		</section>
 		<section>
 			<a href="usuarios.php">Usuarios</a>		
@@ -26,7 +26,7 @@
 			<a href="pedidos.php">Pedidos</a>
 		</section>
 		<section>
-			<a href=""></a>
+			<a href="tienda">Tienda</a>
 		</section>
 		<section>
 			<a href=""></a>

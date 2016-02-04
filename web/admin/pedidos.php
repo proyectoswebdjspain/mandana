@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Panel Portada</title>
+	<title>Panel Pedidos</title>
 	<link rel="shortcut icon" href="images/favicon.ico" >
 	<link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,8 +10,8 @@
 
 <body>
 	<?php
-		$categoria = 3;
-		include("admin/header.php");
+		$categoria = 4;
+		include("includes/header.php");
 	?>
 	<main>
 		<section>

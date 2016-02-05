@@ -20,7 +20,8 @@ CREATE TABLE sub_categorias (
 	CONSTRAINT FK_id_categoria FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) on delete cascade
 );
 
-INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`) VALUES ('1', '1', 'Marcas');
+INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`) VALUES ('1', '1', 'Personaliza tu Carcasa');
+INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`) VALUES ('2', '1', 'Diseños Mandana');
 
 CREATE TABLE opciones (
 	id_opcion INTEGER(5) NOT NULL auto_increment,
@@ -31,7 +32,14 @@ CREATE TABLE opciones (
 	CONSTRAINT FK_id_sub_categoria FOREIGN KEY (id_sub_categoria) REFERENCES sub_categorias (id_sub_categoria) on delete cascade
 );
 
-INSERT INTO `mandana`.`opciones` (`id_opcion`, `id_sub_categoria`, `opcion`) VALUES ('1', '1', 'HTC', '1');
+INSERT INTO `mandana`.`opciones` (`id_opcion`, `id_sub_categoria`, `opcion`, `estado`) VALUES ('1', '1', 'HTC', '1');
 
-
+CREATE TABLE productos (
+	id_producto INTEGER(10) NOT NULL auto_increment,
+	id_subcategoria INTEGER(2) NOT NULL,
+	id_opcion INTEGER(5) NOT NULL,	
+	nombre_producto VARCHAR(255) NOT NULL,
+	modelo VARCHAR(100),
+	
+)
 

@@ -242,6 +242,7 @@ main {width:80%;
 	transition: all 0.3s;
 	background: #FFF;
 }
+
 /*--content--*/
 .span_1_of_c1{
 	width: 26.2%;
@@ -288,6 +289,7 @@ main {width:80%;
 	left:33%;
 	top: 45%;
 }
+
 .radius {
 	position: absolute;
 	top: 5px;

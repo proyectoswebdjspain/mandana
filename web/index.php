@@ -87,7 +87,7 @@
 						 <div class="slider-right">
 						    <h1>Classic</h1>
 						    <h2>White</h2>
-						    <p>Lorem ipsum dolor sit amet</p>
+						    <p>Lorem ipsum dolor si amet</p>
 						    <div class="btn"><a href="shop.html">Shop Now</a></div>
 						 </div>
 						 <div class="clear"></div>

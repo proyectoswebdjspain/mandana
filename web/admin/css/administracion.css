@@ -115,6 +115,82 @@ nav ul li a:hover {
 	
 }
 
+#main .sub-panel {
+	background:silver;	
+	overflow:auto;
+	border-radius:5px;
+} 
+
+#main .sub-panel h1{
+	width:80%;
+	float:left;
+	padding-left:20px;
+}
+#main .sub-panel a{
+	display:block;	
+	width:80px;
+	float:right;
+	text-align:center;
+	text-decoration:none;
+	color:black;
+	font-size:15px;
+}
+
+#main .sub-panel a:hover{
+	background:#D8D8D8;
+}
+
+#main .sub-panel a img{
+	margin-top:5px;
+}
+
+#main .sub-panel a p{
+	margin:0px;
+}
+
+.listado{
+	overflow-x:auto;
+}
+.listado table{
+	border-collapse:collapse;
+	margin:auto;
+}
+
+.listado p{
+	margin:0px;
+}
+.listado td{
+	text-align:center;
+}
+
+.listado .agregar td{ 
+	background:#E0F8E0;
+	padding:10px 5px;
+}
+
+.oculto {
+	display:none;
+	
+}
+.oculto .fondo table{
+	margin:auto;
+}
+
+.detalles {
+	width:700px;
+	margin:auto;
+}
+
+.detalles textarea {
+	width:700px;
+	height:150px;
+}
+
+.detalles p {
+	text-align:center;
+}
+
+
 
 
 

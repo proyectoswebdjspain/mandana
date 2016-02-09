@@ -14,6 +14,9 @@
 	</header>
 	<main>
 		<section>
+			<a href="catalogo.php">Catalogo</a>
+		</section>
+		<section>
 			<a href="menus.php">Menus</a>
 		</section>
 		<section>
@@ -24,9 +27,6 @@
 		</section>
 		<section>
 			<a href="pedidos.php">Pedidos</a>
-		</section>
-		<section>
-			<a href="tienda">Tienda</a>
 		</section>
 		<section>
 			<a href=""></a>

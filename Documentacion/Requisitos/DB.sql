@@ -36,10 +36,71 @@ INSERT INTO `mandana`.`opciones` (`id_opcion`, `id_sub_categoria`, `opcion`, `es
 
 CREATE TABLE productos (
 	id_producto INTEGER(10) NOT NULL auto_increment,
-	id_subcategoria INTEGER(2) NOT NULL,
+	id_categoria INTEGER(2) NOT NULL,
+	id_sub_categoria INTEGER(2) NOT NULL,
 	id_opcion INTEGER(5) NOT NULL,	
 	nombre_producto VARCHAR(255) NOT NULL,
-	modelo VARCHAR(100),
+	referencia VARCHAR(100),
+	precio_base INTEGER(6),
+	precio_final INTEGER(7),
+	cantidad INTEGER(10),
+	estado INTEGER(2),
+	detalles VARCHAR(5000),
+	material VARCHAR(30),
+	tipo VARCHAR(30),
+	stock INTEGER(20),
+	PRIMARY KEY (id_producto),
+	CONSTRAINT FK_id_sub_categoria2 FOREIGN KEY (id_sub_categoria) REFERENCES sub_categorias (id_sub_categoria) on UPDATE CASCADE,
+	CONSTRAINT FK_id_opcion FOREIGN KEY (id_opcion) REFERENCES opciones (id_opcion) on UPDATE CASCADE,
+	CONSTRAINT FK_id_categoria2 FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) on UPDATE CASCADE
+);
+
+CREATE TABLE imagenes (
+	id_foto INTEGER(30) NOT NULL auto_increment,
+	id_producto INTEGER(10) NOT NULL,
+	foto 
+	titulo VARCHAR(100) NOT NULL,
+	tipo VARCHAR(10) NOT NULL,
+	tamanio INTEGER(200) NOT NULL,
 	
-)
+);
+
+CREATE TABLE tallas (
+	id_talla INTEGER(10) NOT NULL auto_increment,
+	id_producto
+);
+
+CREATE TABLE colores (
+	id_colot INTEGER(10) NOT NULL auto_increment,
+	id_producto
+	nombre_color
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -10,28 +10,11 @@
 
 <body>
 	<?php
-		$categoria = 1;
+		$categoria = 5;
 		include("includes/header.php");
 	?>
 	<main>
-		<section>
-			<a href="categorias.php?newcat">Añadir Categoria</a>
-		</section>
-		<section>
-			<a href="categorias.php?modcat">Modificar Categoria</a>
-		</section>
-		<section>
-			<a href="categorias.php?delcat">Eliminar Categoria</a>
-		</section>
-		<section>
-			<a href="productos.php?newpro">Agregar Productos</a>
-		</section>
-		<section>
-			<a href="productos.php?modpro">Modificar Productos</a>		
-		</section>
-		<section>
-			<a href="productos.php?delpro">Eliminar Productos</a>
-		</section>
+		
 		
 	</main>
 </body>

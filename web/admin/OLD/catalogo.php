@@ -24,12 +24,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Panel de Administración</title>
+	<title>Panel de Productos</title>
 	<link rel="shortcut icon" href="images/favicon.ico" >
 	<link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/administracion.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"></script> 
 	<script src="app/editor/nicEdit.js" type="text/javascript"></script> 
 	<script> 
@@ -51,15 +50,16 @@
 		});
 		
 	</script>  
+	
 </head>
 
 <body>
-	<?php 
-		include("includes/menu.php");
-		include("includes/menu_left.php");
+	<?php
+		$categoria = 5;
+		include("includes/header.php");
+		
 	?>
-	
-	<main>
+	<div id="main">
 		<div class="sub-panel">
 				<h1>Catalogo > Productos <span class="oculto"> > Añadiendo Producto</span></h1>
 				<span class="visible"><a href="#" id="mostrar"><img src="icons/añadir.png" alt="añadir nuevo" title="añadir nuevo"/><p>Añadir nuevo</p></a></span> 
@@ -156,7 +156,7 @@
 				</div>
 				<div id="title">
 					<input type="file" name="foto" />
-				</div>
+				<div>
 				
 				<div class="campo">
 					<p>Nombre:<input type="text" name="producto[5]" value=""/> </p>
@@ -204,6 +204,6 @@
 				</form>
 			</div>	
 		</div>
-	</main>
+	</div>
 </body>
 </html>

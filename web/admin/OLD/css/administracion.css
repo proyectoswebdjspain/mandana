@@ -119,6 +119,7 @@ nav ul li a:hover {
 	background:silver;	
 	overflow:auto;
 	border-radius:5px;
+	margin-bottom:20px;
 } 
 
 #main .sub-panel h1{
@@ -172,8 +173,42 @@ nav ul li a:hover {
 	display:none;
 	
 }
+
 .oculto .fondo table{
 	margin:auto;
+}
+
+.oculto .fondo table input {
+	margin:auto;
+	text-align:center;
+}
+
+.oculto .fondo table tr {
+	padding:10px;
+}
+
+.oculto .fondo table td{
+	background:white;
+	padding:10px;
+	border-radius:0px 10px 10px 0;
+	border-collapse:collapse;
+	border:2px groove silver;
+}
+
+.oculto .fondo table th{
+	text-align:right;
+	background:#CEE3F6;
+	
+}
+
+.oculto .fondo {
+	background:#CEF6D8;
+	width:800px;
+	margin:auto;
+	border-radius:20px;
+	padding:40px 20px;
+	overflow:auto;
+	margin-bottom:20px;
 }
 
 .detalles {
@@ -189,6 +224,66 @@ nav ul li a:hover {
 .detalles p {
 	text-align:center;
 }
+
+
+#imagen {
+	width:150px;
+	height:200px;
+	background:white;
+	border:1px solid black;
+	margin:auto;
+	overflow:none;
+}
+
+#title {
+	margin:10px 0px;
+	text-align:center;
+}
+
+.campo {
+	width:90%;
+	padding:5px;
+	border-bottom:2px groove silver;
+	background:#CEE3F6;
+	margin:auto;
+}
+
+.campo-right {
+	float:right;
+	width:100px;
+	text-align:center;
+	margin-right:150px;
+}
+
+.boton {
+	width:100px;
+	float:right;
+	margin-right:50px;
+	margin-top:60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

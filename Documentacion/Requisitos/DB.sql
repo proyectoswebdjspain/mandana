@@ -43,12 +43,14 @@ CREATE TABLE productos (
 	referencia VARCHAR(100),
 	precio_base INTEGER(6),
 	precio_final INTEGER(7),
+	iva INTEGER(2),
 	cantidad INTEGER(10),
 	estado INTEGER(2),
 	detalles VARCHAR(5000),
 	material VARCHAR(30),
 	tipo VARCHAR(30),
 	stock INTEGER(20),
+	disponibilidad INTEGER(2),
 	PRIMARY KEY (id_producto),
 	CONSTRAINT FK_id_sub_categoria2 FOREIGN KEY (id_sub_categoria) REFERENCES sub_categorias (id_sub_categoria) on UPDATE CASCADE,
 	CONSTRAINT FK_id_opcion FOREIGN KEY (id_opcion) REFERENCES opciones (id_opcion) on UPDATE CASCADE,
@@ -71,14 +73,20 @@ CREATE TABLE tallas (
 );
 
 CREATE TABLE colores (
-	id_colot INTEGER(10) NOT NULL auto_increment,
+	id_color INTEGER(10) NOT NULL auto_increment,
 	id_producto
 	nombre_color
 );
 
+CREATE TABLE impuestos (
+	id_imp INTEGER(5) NOT NULL auto_increment,
+	valor INTEGER(2) NOT NULL,
+	PRIMARY KEY (id_imp)
+);
 
-
-
+INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('1','8');
+INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('2','10');
+INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('3','21');
 
 
 

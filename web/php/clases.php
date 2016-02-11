@@ -9,7 +9,7 @@ class mysql{
 	//Declaramos el constructor de la clase
 	 
 	public function __construct($host, $usuario, $clave, $db){
-		$this->conexion = new mysqli($host, $usuario, $clav);
+		$this->conexion = new mysqli($host, $usuario, $clave);
 		 
 	}
 	 

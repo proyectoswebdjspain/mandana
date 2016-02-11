@@ -1,0 +1,46 @@
+@charset "UTF-8";
+*{box-sizing:border-box;}
+
+body {margin:0px; border:0;
+;}
+
+a {text-decoration:none;}
+
+ul {list-style:none;}
+
+header {
+	background:#08298A;
+	overflow:auto;
+	position:fixed;
+	width:100%;
+	height:50px;
+}
+
+main {
+	float:left;
+	padding:0 20px;
+	margin-left:250px;
+	margin-top:50px;
+}
+
+/* Menu superior */
+
+nav ul li{
+	float:left;
+}
+
+nav a {
+	color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+

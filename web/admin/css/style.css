@@ -2,11 +2,15 @@
 *{box-sizing:border-box;}
 
 body {margin:0px; border:0;
+	width:100%;
+	background:#D8D8D8;
 ;}
 
 a {text-decoration:none;}
 
-ul {list-style:none;}
+ul {list-style:none;
+padding:0;
+	}
 
 header {
 	background:#08298A;
@@ -18,9 +22,9 @@ header {
 
 main {
 	float:left;
-	padding:0 20px;
-	margin-left:250px;
-	margin-top:50px;
+	padding:0 0 0 250px;
+	margin:50px 0 0 0;
+	width:100%;
 }
 
 /* Menu superior */
@@ -33,10 +37,166 @@ nav a {
 	color:white;
 }
 
+/* Main */
+
+.box-pag{
+	width:100%;
+	overflow:auto;
+}
+
+
+.sub-panel {
+	overflow:none;
+	float:left;
+	width:100%;
+	border-bottom:1px solid blue;
+	padding:0 10px;
+	background:white;
+}
+.sub-panel h1{
+	float:left;
+	
+}
+
+.sub-panel a{
+	float:right;
+	display:block;
+	text-align:center;
+	margin-left:20px;
+	margin-top:5px;
+}
+
+.sub-panel p{
+	margin:0;
+	padding:0;
+}
 
 
 
+/* Main Sub Menu */
 
+.sub_menu {
+	width:200px;
+	float:left;
+	margin: 20px 0 0 10px;
+}
+
+.sub_menu li {
+}
+
+.sub_menu ul li a {
+	text-align:center;
+	border:1px solid silver;
+	padding:5px;
+	background:white;
+	display:block;
+	color:black;
+}
+
+.sub_menu li a:hover {
+	background:silver;
+	cursor:pointer;
+	border:1px solid black;
+}
+
+.sub_menu li a:focus {
+	background:#0174DF;
+	cursor:pointer;
+	border:1px solid black;
+}
+
+ 
+ /*Contenido del main */
+
+#opcion {
+	float:left;
+	overflow:auto;
+	width:100%;
+	border-bottom:1px solid silver;
+} 
+ 
+#opcion h2{
+	width:50%;
+	float:left;
+	font-size:12px;
+	padding:0 5px;
+}
+ 
+#opcion img{
+	float:left;
+	width:30px;
+	margin-left:10px;
+} 
+ 
+.listado{
+	overflow-x:auto;
+}
+.listado table{
+	border-collapse:collapse;
+	margin:auto;
+}
+
+.listado p{
+	margin:0px;
+}
+.listado td{
+	text-align:center;
+}
+
+.listado .agregar td{ 
+	background:#E0F8E0;
+	padding:10px 5px;
+}
+
+.oculto {
+	display:none;
+	
+}
+
+.fondo table{
+	margin:auto;
+}
+
+.fondo table input {
+	margin:auto;
+	text-align:center;
+}
+
+.fondo table tr {
+	padding:10px;
+}
+
+
+.fondo table th{
+	text-align:right;
+	background:#CEE3F6;
+	
+}
+
+.fondo {
+	background:white;
+	width:70%;
+	margin: 20px 20px;
+	border-radius:5px;
+	overflow:auto;
+	float:left;
+	border:1px solid #ccc;
+	padding:0 2px 20px 2px;
+}
+
+.detalles {
+	width:90%;
+	margin:auto;
+}
+
+.detalles textarea {
+	width:500px;
+	height:150px;
+}
+
+.detalles p {
+	text-align:center;
+}
 
 
 

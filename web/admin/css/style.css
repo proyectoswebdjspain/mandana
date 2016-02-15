@@ -17,13 +17,13 @@ header {
 	overflow:auto;
 	position:fixed;
 	width:100%;
-	height:50px;
+	height:60px;
 }
 
 main {
 	float:left;
 	padding:0 0 0 250px;
-	margin:50px 0 0 0;
+	margin:60px 0 0 0;
 	width:100%;
 }
 
@@ -37,6 +37,13 @@ nav a {
 	color:white;
 }
 
+nav a > img {
+	margin-left:20px;
+}
+
+nav ul li > img {
+	margin-left:20px;
+}
 /* Main */
 
 .box-pag{

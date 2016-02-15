@@ -25,8 +25,7 @@
 <html>
 <head>
 	<title>Panel de Administración</title>
-	<link rel="shortcut icon" href="images/favicon.ico" >
-	<link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
+	<link rel="shortcut icon" href="icons/panel.ico" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />

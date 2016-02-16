@@ -50,92 +50,102 @@
 		<div class="sub-panel">
 				<h1>Categorias <span class="oculto"> > Añadir Nueva</span></h1>
 		</div>
-		<div class="box-pag">
-			<form action="categorias.php" method="post">
-				<?php
-				// tamaño de la pagina inicial
-					IF (ISSET($_REQUEST['consultar'])){
-						$limit = $_REQUEST['paginacion'];
-					}
-					ELSE{
-						$limit=25;
-					}
-					$inicio = 0;
-					IF (ISSET($_REQUEST['pagina'])){
-						$inicio = (($_REQUEST['pagina'] -1) * $limit);
-					}
+		<div class="visible">
+			<?php
+					// tamaño de la pagina inicial
+						IF (ISSET($_REQUEST['consultar'])){
+							$limit = $_REQUEST['paginacion'];
+						}
+						ELSE{
+							$limit=25;
+						}
+						$inicio = 0;
+						IF (ISSET($_REQUEST['pagina'])){
+							$inicio = (($_REQUEST['pagina'] -1) * $limit);
+						}
+						
+						$sql= "SELECT categoria FROM categorias";
+						$result = mysqli_query($link, $sql);
+						$cant = mysqli_num_rows($result);
+						$pag = 1;
+						
+						$maxpag = ceil($cant / $limit);
+					IF ($maxpag>1){	
+						
 					
-					$sql= "SELECT categoria FROM categorias";
-					$result = mysqli_query($link, $sql);
-					$cant = mysqli_num_rows($result);
-					$pag = 1;
+					?>
+			<div class="box-pag">
+				<form action="categorias.php" method="post">
 					
-					$maxpag = ceil($cant / $limit);
-					
-					
-				
-				?>
-				<p>Página 
-				<?php
-				for($i=0;$i<$maxpag;$i++){
-					echo "<a href=\"categorias.php?pagina=$pag\">$pag</a> ";
-					$pag++;
-				}
-				?>/1 (mostrados <?php echo $limit; ?>) | Mostrar 
-				<select name="paginacion" > 
-					<option value="25"> 25 </option>
-					<option value="50"> 50 </option>
-					<option value="100"> 100 </option>
-				
-				</select>  /<?php echo $cant; ?> resultado(s)
-				
-				<input type="submit" value="Ir" name="consultar"/>
-				</p>
-			</form>
-		</div>
-		<div class="listado">
-			<table>
-				<form action="catalogo.php" method="post">
-				<tr>
-					<th><p>ID</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></th>
-					<th><p>Nombre</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></th>
-					<th><p>Descripción</p></th>
-					<th><p>Sub-Categorias</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></th>
-					<th><p>Acciones</p></th>
-				</tr>
-				<?php
-					$sql = "SELECT * FROM categorias LIMIT $inicio, $limit";
-					$result = mysqli_query($link, $sql);
-					WHILE($row = mysqli_fetch_array($result)){
-						
-						$id_cat=$row['id_categoria'];
-						$cat=$row['categoria'];
-						$deta=$row['descripcion'];
-						
-						$sql1= "SELECT count(sub_categoria) AS 'num' FROM sub_categorias WHERE id_categoria = '$id_cat'";
-						$result1 = mysqli_query($link, $sql1);
-						$row1 = mysqli_fetch_array($result1);
-						
-						$num_subcat = $row1['num'];
-						
-						echo"
-						
-						<tr>
-							<td>$id_cat</td>
-							<td>$cat</td>
-							<td>$deta</td>
-							<td>$num_subcat</td>
-							<td>
-								<a href=\"\" ><img src=\"icons/add.png\" alt=\"Agregar\" /></a>
-								<a href=\"\" ><img src=\"icons/modificar.png\" alt=\"Modificar\" /></a>
-							</td>
-						</tr>";
+					<p>Página 
+					<?php
+					for($i=0;$i<$maxpag;$i++){
+						echo "<a href=\"categorias.php?pagina=$pag\">$pag</a> ";
+						$pag++;
 					}
-				
-				
-				?>
+					?>/1 (mostrados <?php echo $limit; ?>) | Mostrar 
+					<select name="paginacion" > 
+						<option value="25"> 25 </option>
+						<option value="50"> 50 </option>
+						<option value="100"> 100 </option>
+					
+					</select>  /<?php echo $cant; ?> resultado(s)
+					
+					<input type="submit" value="Ir" name="consultar"/>
+					</p>
 				</form>
-			</table>
+			</div>
+					<?php } ?>
+			<div class="listado">
+					<div class="fila1">
+						<div class="id"><p>ID</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
+						<div class="nombre"><p>Nombre</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
+						<div class="descrip"><p>Descripción</p></div>
+						<div class="subcat"><p>Categorias</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
+					</div>
+					
+					
+					
+					
+					<?php
+					
+			// LISTADO DE CATEGORIAS DISPONIBLES		
+						$sql = "SELECT * FROM categorias LIMIT $inicio, $limit";
+						$result = mysqli_query($link, $sql);
+						WHILE($row = mysqli_fetch_array($result)){
+							
+							$id_cat=$row['id_categoria'];
+							$cat=$row['categoria'];
+							$deta=$row['descripcion'];
+							
+							IF ($deta == ""){
+								$deta = "No hay descripción disponible";
+							}
+							
+							
+							$sql1= "SELECT count(sub_categoria) AS 'num' FROM sub_categorias WHERE id_categoria = '$id_cat'";
+							$result1 = mysqli_query($link, $sql1);
+							$row1 = mysqli_fetch_array($result1);
+							
+							$num_subcat = $row1['num'];
+							
+							echo"
+							
+								<div class=\"fila\">
+									<a href=\"categoria.php?id=$id_cat\">
+										<div class=\"id\"><p>$id_cat</p></div>
+										<div class=\"nombre\"><p>$cat</p></div>
+										<div class=\"descrip\"><p>$deta</p></div>
+										<div class=\"subcat\"><p>$num_subcat</p></div>
+									</a>
+								</div>
+							
+							";
+						}
+					
+					
+					?>
+			</div>
 		</div>
 	</main>
 </body>

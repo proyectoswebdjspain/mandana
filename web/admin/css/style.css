@@ -1,6 +1,10 @@
 @charset "UTF-8";
 *{box-sizing:border-box;}
 
+html {
+	height:100%;
+}
+
 body {margin:0px; border:0;
 	width:100%;
 	background:#D8D8D8;
@@ -78,6 +82,22 @@ nav ul li > img {
 	padding:0;
 }
 
+.sub-panel .numero {
+	border:1px solid silver;
+	border-radius:20px;
+	text-align:center;
+	font-size:15px;
+	padding:5px 10px 5px 5px;
+	margin-left:3px;
+}
+
+.sub-panel .numero p{
+	margin:0;
+	padding:0;
+	width:20px;
+	display:inline;
+	text-align:center;
+}
 
 
 /* Main Sub Menu */
@@ -155,11 +175,18 @@ nav ul li > img {
 	padding:10px 5px;
 }
 
-.oculto {
+.oculto , .modificar , .añadir{
 	display:none;
-	
+	width:100%;
+	text-align:center;
+	padding-top:10px;
 }
 
+.visible {
+	overflow:auto;
+	width:100%;
+	padding-top:10px;
+}
 .fondo table{
 	margin:auto;
 }
@@ -204,6 +231,78 @@ nav ul li > img {
 .detalles p {
 	text-align:center;
 }
+
+.fila1 {
+	width:90%;
+	margin:auto;
+	overflow:auto;
+	margin-bottom:10px;
+}
+
+.fila1 .id, .fila1 .nombre, .fila1 .descrip, .fila1 .subcat {
+	float:left;
+	padding:10px;
+	border:1px solid silver;
+	text-align:center;
+	height:52px;
+	font-size:16px;
+}
+
+.fila {
+	margin:auto;
+	width:90%;
+	overflow:auto;
+	margin-top:3px;
+}
+
+.fila a{
+	float:left;
+	display:block;
+	width:100%;
+	padding:10px;
+	border-radius:5px;
+	background:#EFF5FB;
+	margin:auto;
+	text-align:center;
+	color:#1C1C1C;
+}
+
+.fila a:hover{
+	background:#CEE3F6;
+}
+
+.id {
+	width:8%;
+	float:left;
+}
+
+.nombre {
+	width:15%;
+	float:left;
+}
+
+.descrip {
+	width:65%;
+	float:left;
+	font-size:12px;
+}
+
+.subcat {
+	width:12%;
+	float:left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

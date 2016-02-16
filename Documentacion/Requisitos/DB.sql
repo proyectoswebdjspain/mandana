@@ -1,6 +1,7 @@
 CREATE TABLE categorias (
 	id_categoria INTEGER(2) NOT NULL auto_increment,
 	categoria VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(1000),
 	PRIMARY KEY (id_categoria)
 );
 

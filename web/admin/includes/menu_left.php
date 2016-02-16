@@ -5,11 +5,11 @@
 			<li class='active has-sub'><a href="catalogo.php">Catálogo </a>
 				<ul>
 					<li><a href="catalogo.php">Productos</a></li>
-					<li><a href="">Categorías</a></li>
-					<li><a href="">Atributos de productos</a></li>
-					<li><a href="">Características de productos</a></li>
-					<li><a href="">Fabricantes</a></li>
-					<li class='last'><a href="">Proveedores</a></li>
+					<li><a href="categorias.php">Categorías</a></li>
+					<li><a href="atributos.php">Atributos de productos</a></li>
+					<li><a href="caracteristicas.php">Características de productos</a></li>
+					<li><a href="fabricantes.php">Fabricantes</a></li>
+					<li class='last'><a href="proveedores.php">Proveedores</a></li>
 				</ul>
 			</li>
 			<li class='active has-sub'><a href="">Pedidos</a>

@@ -121,14 +121,47 @@
 		</div>	
 		<div class="visible">
 			<div class="box-pag">
-				<p>Página 1/1 | Mostrar 
+				<form action="catalogo.php" method="post">
+				<?php
+				// tamaño de la pagina inicial
+					IF (ISSET($_REQUEST['consultar'])){
+						$limit = $_REQUEST['paginacion'];
+					}
+					ELSE{
+						$limit=25;
+					}
+					$inicio = 0;
+					IF (ISSET($_REQUEST['pagina'])){
+						$inicio = (($_REQUEST['pagina'] -1) * $limit);
+					}
+					
+					$sql= "SELECT id_producto FROM productos";
+					$result = mysqli_query($link, $sql);
+					$cant = mysqli_num_rows($result);
+					$pag = 1;
+					
+					$maxpag = ceil($cant / $limit);
+					
+					
+				
+				?>
+				<p>Página 
+				<?php
+				for($i=0;$i<$maxpag;$i++){
+					echo "<a href=\"categorias.php?pagina=$pag\">$pag</a> ";
+					$pag++;
+				}
+				?>/1 (mostrados <?php echo $limit; ?>) | Mostrar 
 				<select name="paginacion" > 
 					<option value="25"> 25 </option>
 					<option value="50"> 50 </option>
 					<option value="100"> 100 </option>
-					<option value="Todos"> Todos </option>
 				
-				</select>  /X resultado(s)</p>
+				</select>  /<?php echo $cant; ?> resultado(s)
+				
+				<input type="submit" value="Ir" name="consultar"/>
+				</p>
+			</form>
 			</div>
 			<div class="listado">
 				<table>

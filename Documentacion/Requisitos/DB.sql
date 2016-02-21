@@ -18,17 +18,19 @@ CREATE TABLE sub_categorias (
 	id_categoria INTEGER(2) NOT NULL,
 	sub_categoria VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(1000),
+	visibilidad INTEGER(1) NOT NULL,
 	PRIMARY KEY (id_sub_categoria),
 	CONSTRAINT FK_id_categoria FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) on update cascade
 );
 
-INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`, `descripcion`) VALUES ('1', '1', 'Personaliza tu Carcasa', '');
-INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`, `descripcion`) VALUES ('2', '1', 'Diseños Mandana', '');
+INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`, `descripcion`, `visibilidad`) VALUES ('1', '1', 'Personaliza tu Carcasa', '', '1');
+INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`, `descripcion`, `visibilidad`) VALUES ('2', '1', 'Diseños Mandana', '', '0');
 
 CREATE TABLE opciones (
 	id_opcion INTEGER(5) NOT NULL auto_increment,
 	id_sub_categoria INTEGER(2) NOT NULL,
 	opcion VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(1000),
 	estado INTEGER(1) NOT NULL,
 	PRIMARY KEY (id_opcion),
 	CONSTRAINT FK_id_sub_categoria FOREIGN KEY (id_sub_categoria) REFERENCES sub_categorias (id_sub_categoria) on update cascade

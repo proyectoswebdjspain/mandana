@@ -4,7 +4,9 @@
 	$id_cat = $_REQUEST['id'];
 	IF(isset($_REQUEST['modificar'])){
 		$descrip = $_REQUEST['descripcion'];
-		$sql="UPDATE categorias SET descripcion = '$descrip' WHERE id_categoria = '$id_cat' ";
+		$nombre = $_REQUEST['nombre'];
+		$visibilidad = $_REQUEST['estado'];
+		$sql="UPDATE sub_categorias SET descripcion = '$descrip', sub_categoria = '$nombre', visibilidad = '$visibilidad' WHERE id_sub_categoria = '$id_cat' ";
 		if(mysqli_query($link, $sql)){
 			$mensaje="Descripción modificada con extio <img src=\"icons/check.png\" alt=\"check\"/>";
 		}
@@ -16,19 +18,20 @@
 	IF(isset($_REQUEST['añadir'])){
 		$descrip = $_REQUEST['descripcion'];
 		$nombre = $_REQUEST['nombre'];
-		$sql = "SELECT * FROM sub_categorias WHERE sub_categoria = '$nombre' AND id_categoria = '$id_cat'";
+		$estado = $_REQUEST['estado'];
+		$sql = "SELECT * FROM opciones WHERE opcion = '$nombre' AND id_sub_categoria = '$id_cat'";
 		$result = mysqli_query($link, $sql);
 		$row = mysqli_num_rows($result);
 		if($row != 0){
-			$mensaje="Ya existe una Subcategoria con ese nombre para esta Categoria <img src=\"icons/cancelar.png\" alt=\"error\" width=\"30\"/>";
+			$mensaje="Ya existe una Opción con ese nombre para esta Subcategoria <img src=\"icons/cancelar.png\" alt=\"error\" width=\"30\"/>";
 		}
 		else{
-			$sql="INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`, `descripcion`) VALUES ('', '$id_cat', '$nombre', '$descrip'); ";
+			$sql="INSERT INTO `mandana`.`opciones` (`id_opcion`, `id_sub_categoria`, `opcion`, `descripcion`, `estado`) VALUES ('', '$id_cat', '$nombre', '$descrip', '$estado')";
 			if(mysqli_query($link, $sql)){
-				$mensaje="Subcategoria añadida con extio <img src=\"icons/check.png\" alt=\"check\"/>";
+				$mensaje="Opción añadida con extio <img src=\"icons/check.png\" alt=\"check\"/>";
 			}
 			ELSE{
-				$mensaje="Error al añadir Subcategoria <img src=\"icons/cancelar.png\" alt=\"error\"/>";
+				$mensaje="Error al añadir Opción <img src=\"icons/cancelar.png\" alt=\"error\"/>";
 			}
 		}
 	}
@@ -88,23 +91,31 @@
 		include("includes/menu_left.php");
 		
 		
-		$sql= "SELECT * FROM categorias WHERE id_categoria = '$id_cat' ";
+		$sql= "SELECT * FROM sub_categorias WHERE id_sub_categoria = '$id_cat' ";
 		$result = mysqli_query($link, $sql);
 		$row = mysqli_fetch_array($result);
 		
-		$nomcat = $row['categoria'];
+		$estadocat = $row['visibilidad'];
+		$cat = $row['id_categoria'];
+		$nomcat = $row['sub_categoria'];
 		$detacat = $row['descripcion'];
-		$sql= "SELECT COUNT('id_categoria') AS 'categorias' FROM sub_categorias WHERE id_categoria = '$id_cat' ";
+		$sql= "SELECT COUNT('id_sub_categoria') AS 'categorias' FROM opciones WHERE id_sub_categoria = '$id_cat' ";
 		$result = mysqli_query($link, $sql);
 		$row = mysqli_fetch_array($result);
 		
 		$num = $row['categorias'];
 		
+		$sql2= "SELECT categoria FROM categorias WHERE id_categoria = '$cat' ";
+		$result2 = mysqli_query($link, $sql2);
+		$row2 = mysqli_fetch_array($result2);
+		
+		$nombrecategoria = $row2['categoria']; 
+		
 	?>
 	
 	<main>
 		<div class="sub-panel">
-				<h1><a href="categorias.php" >Categorias </a> > <?php echo "<a href=\"categoria.php?id=$id_cat\">$nomcat " ;?><span class="numero"><p> <?php echo $num; ?></p></span> </a>
+				<h1><a href="categorias.php" >Categorias </a> > <?php echo "<a href=\"categoria.php?id=$cat\">$nombrecategoria " ;?> > <?php echo "<a href=\"opciones.php?id=$id_cat\">$nomcat " ;?><span class="numero"><p> <?php echo $num; ?></p></span> </a>
 					<span class="añadir"> > Añadir </span>
 					<span class="modificar"> > Modificar </span>
 				</h1>
@@ -135,7 +146,7 @@
 						$inicio = (($_REQUEST['pagina'] -1) * $limit);
 					}
 					
-					$sql= "SELECT * FROM sub_categorias WHERE id_categoria = '$id_cat'";
+					$sql= "SELECT * FROM opciones WHERE id_sub_categoria = '$id_cat' ";
 					$result = mysqli_query($link, $sql);
 					$cant = mysqli_num_rows($result);
 					$pag = 1;
@@ -165,7 +176,7 @@
 			</div>
 		<?php }	
 
-			$sql = "SELECT * FROM sub_categorias WHERE id_categoria = '$id_cat' LIMIT $inicio, $limit ";
+			$sql = "SELECT * FROM opciones WHERE id_sub_categoria = '$id_cat' LIMIT $inicio, $limit ";
 			$result = mysqli_query($link, $sql);
 			
 			IF($row = mysqli_num_rows($result)==0){
@@ -195,7 +206,7 @@
 					<div class="id"><p>ID</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
 					<div class="nombre"><p>Nombre</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
 					<div class="descrip"><p>Descripción</p></div>
-					<div class="subcat"><p>Opciones</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
+					<div class="subcat"><p>Estado</p><a href="" ><img src="icons/ordenabajo.png" alt="" /></a> <a href="" ><img src="icons/ordenarriba.png" alt="" /></a></div>
 				</div>
 				
 				
@@ -204,29 +215,29 @@
 					
 						WHILE($row = mysqli_fetch_array($result)){
 							
-							$id_sub_cat=$row['id_sub_categoria'];
-							$cat=$row['sub_categoria'];
+							$id_sub_cat=$row['id_opcion'];
+							$cat=$row['opcion'];
 							$deta=$row['descripcion'];
-							
+							$estadoinicial = $row['estado'];
 							IF ($deta == ""){
 								$deta = "No hay descripción disponible";
 							}
 							
-							
-							$sql1= "SELECT count(id_sub_categoria) AS 'num' FROM opciones WHERE id_sub_categoria = '$id_sub_cat'";
-							$result1 = mysqli_query($link, $sql1);
-							$row1 = mysqli_fetch_array($result1);
-							
-							$num_subcat = $row1['num'];
+							if($estadoinicial==1){
+								$estado = "<p style=\"color:green;\">Activo</p>";
+							}
+							else{
+								$estado = "<p style=\"color:red;\">Desactivado</p>";
+							}
 							
 							echo"
 							
 								<div class=\"fila\">
-									<a href=\"opciones.php?id=$id_sub_cat\">
+									<a href=\"opcion.php?id=$id_sub_cat\">
 										<div class=\"id\"><p>$id_sub_cat</p></div>
 										<div class=\"nombre\"><p>$cat</p></div>
 										<div class=\"descrip\"><p>$deta</p></div>
-										<div class=\"subcat\"><p>$num_subcat</p></div>
+										<div class=\"subcat\">$estado</div>
 									</a>
 								</div>
 							
@@ -241,16 +252,34 @@
 			
 		</div>
 		<div class="modificar">
-			<form action="categoria.php?id=<?php echo $id_cat ?>" method="post">
-				<h2>Cambiar la descricion de la Categoria > <?php echo $nomcat ?></h2>
+			<form action="opcion.php?id=<?php echo $id_cat ?>" method="post">
+				<h2>Modificar la Subcategoria > <?php echo $nomcat ?></h2>
+				<p>Nombre:<input type="text" name="nombre" value="<?php echo $nomcat; ?>" size="20"/></p>
+				<p>Estado:<select name="estado">
+						<?php IF($estadocat==1){ ?>
+							<option value="1" selected>Visible</option>
+							<option value="0">Oculto</option>
+						<?php }
+						ELSE { ?>
+							<option value="1">Visible</option>
+							<option value="0" selected>Oculto</option>
+					<?php	} ?>
+						
+					</select>
+				</p>
 				<p>Descripción:<input type="text" name="descripcion" value="<?php echo $detacat; ?>" size="70"/></p>
 				<input type="submit" name="modificar" />
 			</form>
 		</div>
 		<div class="añadir">
-			<form action="categoria.php?id=<?php echo $id_cat ?>" method="post">
-				<h2>Añadir sub-categoria a <?php echo $nomcat ?></h2>
+			<form action="opcion.php?id=<?php echo $id_cat ?>" method="post">
+				<h2>Añadir Opción a <?php echo $nomcat ?></h2>
 				<p>Nombre:<input type="text" value="" name="nombre" /></p>
+				<p>Estado:<select name="estado">
+						<option value="1">Activo</option>
+						<option value="0" selected>Desactivado</option>
+					</select>
+				</p>
 				<p>Descripción:<input type="text" value="" name="descripcion" size="70"/></p>
 				<p><input type="submit" value="Añadir" name="añadir" /></p>
 			</form>	

@@ -117,7 +117,7 @@
 		<div class="sub-panel">
 				<h1>Catalogo > Productos <span class="oculto"> > Añadir Nuevo</span></h1>
 				<span class="visible"><a href="#" id="mostrar"><img src="icons/añadir.png" alt="añadir nuevo" title="añadir nuevo"/><p>Añadir</br>nuevo</p></a></span> 
-				<span class="oculto"> <a href="#" id="ocultar"><img src="icons/cancelar.png" alt="añadir nuevo" title="añadir nuevo"/><p>Cancelar</p> <br/></a></span>
+				<span class="oculto"> <a href="#" id="ocultar"><img src="icons/cancelar.png" alt="Cancelar" title="Cancelar"/><p>Cancelar</p> <br/></a></span>
 		</div>	
 		<div class="visible">
 			<div class="box-pag">

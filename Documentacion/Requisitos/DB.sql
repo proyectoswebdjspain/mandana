@@ -16,6 +16,7 @@ INSERT INTO `mandana`.`categorias`(`id_categoria`, `categoria`, `descripcion`) V
 CREATE TABLE sub_categorias (
 	id_sub_categoria INTEGER(3) NOT NULL auto_increment,
 	id_categoria INTEGER(2) NOT NULL,
+	id_imagen INTEGER(20),
 	sub_categoria VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(1000),
 	visibilidad INTEGER(1) NOT NULL,
@@ -55,6 +56,11 @@ CREATE TABLE productos (
 	tipo VARCHAR(30),
 	stock INTEGER(20),
 	disponibilidad INTEGER(2),
+	id_foto1 INTEGER(10), 
+	id_foto2 INTEGER(10), 
+	id_foto3 INTEGER(10), 
+	id_foto4 INTEGER(10), 
+	id_foto5 INTEGER(10), 
 	PRIMARY KEY (id_producto),
 	CONSTRAINT FK_id_sub_categoria2 FOREIGN KEY (id_sub_categoria) REFERENCES sub_categorias (id_sub_categoria) on UPDATE CASCADE,
 	CONSTRAINT FK_id_opcion FOREIGN KEY (id_opcion) REFERENCES opciones (id_opcion) on UPDATE CASCADE,
@@ -63,12 +69,12 @@ CREATE TABLE productos (
 
 CREATE TABLE imagenes (
 	id_foto INTEGER(30) NOT NULL auto_increment,
-	id_producto INTEGER(10) NOT NULL,
-	foto 
 	titulo VARCHAR(100) NOT NULL,
 	tipo VARCHAR(10) NOT NULL,
 	tamanio INTEGER(200) NOT NULL,
-	
+	posicion VARCHAR(20),
+	url VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id_foto)
 );
 
 CREATE TABLE tallas (
@@ -92,7 +98,13 @@ INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('1','8');
 INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('2','10');
 INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('3','21');
 
-
+CREATE TABLE slider (
+	id_slider INTEGER(10) NOT NULL auto_increment,
+	nombre_slider VARCHAR(30),
+	descripcion VARCHAR(500),
+	estado INTEGER(2),
+	
+);
 
 
 

@@ -47,6 +47,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/imagen_view.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"></script> 
 	<script src="app/editor/nicEdit.js" type="text/javascript"></script> 
 	<script> 
@@ -76,6 +77,13 @@
 			$(".visible").show();
 			$(".oculto").hide();
 			$(".confirmacion").hide();
+		  }); 
+		  $("#versi").click(function(){
+			$(".ver").show();
+		  });
+		  $("#verno").click(function(){
+			$(".ver").hide();
+			
 		  });
 		}) ;
 		  
@@ -252,7 +260,11 @@
 			
 		</div>
 		<div class="modificar">
-			<form action="opcion.php?id=<?php echo $id_cat ?>" method="post">
+			<div class="imagen">
+				<output id="list" ></output>
+				
+			</div>
+			<form action="opciones.php?id=<?php echo $id_cat ?>" method="post">
 				<h2>Modificar la Subcategoria > <?php echo $nomcat ?></h2>
 				<p>Nombre:<input type="text" name="nombre" value="<?php echo $nomcat; ?>" size="20"/></p>
 				<p>Estado:<select name="estado">
@@ -268,11 +280,53 @@
 					</select>
 				</p>
 				<p>Descripción:<input type="text" name="descripcion" value="<?php echo $detacat; ?>" size="70"/></p>
+				<p>Mostrar imagen <input type="radio" name="ver" value="no" checked id="verno"/>NO<input type="radio" name="ver" value="si" id="versi"/>SI</p>
+				<div class="ver">
+					<p>Selecionar Imagen <input type="file" id="files" name="files[]" multiple />	</p>
+					
+					
+					 <script>
+							  function archivo(evt) {
+								  var files = evt.target.files; // FileList object
+							 
+								  // Obtenemos la imagen del campo "file".
+								  for (var i = 0, f; f = files[i]; i++) {
+									//Solo admitimos imágenes.
+									if (!f.type.match('image.*')) {
+										continue;
+									}
+							 
+									var reader = new FileReader();
+							 
+									reader.onload = (function(theFile) {
+										return function(e) {
+										  // Insertamos la imagen
+										 document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+										};
+									})(f);
+							 
+									reader.readAsDataURL(f);
+								  }
+							  }
+							 
+							  document.getElementById('files').addEventListener('change', archivo, false);
+					  </script>
+					
+					
+					
+					<p>Posicion de la imagen :
+						<select name="posicion_img">
+							<option value="abajo" selected>Abajo</option>
+							<option value="derecha">Derecha</option>
+							<option value="izquierda">Izquierda</option>
+						</select>
+					</p>
+				</div>
 				<input type="submit" name="modificar" />
 			</form>
 		</div>
 		<div class="añadir">
-			<form action="opcion.php?id=<?php echo $id_cat ?>" method="post">
+			<form action="opciones.php?id=<?php echo $id_cat ?>" method="post">
 				<h2>Añadir Opción a <?php echo $nomcat ?></h2>
 				<p>Nombre:<input type="text" value="" name="nombre" /></p>
 				<p>Estado:<select name="estado">

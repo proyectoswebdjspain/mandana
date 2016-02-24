@@ -14,6 +14,7 @@
 	<link rel="shortcut icon" href="icons/panel.ico" >
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/imagen_view.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"></script> 
 	<script src="app/editor/nicEdit.js" type="text/javascript"></script> 
@@ -24,22 +25,22 @@
 		
 		// Mostrar y ocultar el formulario de añadir producto	
 		$(document).ready(function(){
-		  $("#añadir").click(function(){
-			$(".añadir").show();
+		  $("#eliminar").click(function(){
+			$(".eliminar").show();
 			$(".modificar").hide();
 			$(".visible").hide();
 			$(".confirmacion").hide();
 			$(".oculto").show();
 		  });
 		  $("#modificar").click(function(){
-			$(".añadir").hide();
+			$(".eliminar").hide();
 			$(".modificar").show();
 			$(".visible").hide();
 			$(".oculto").show();
 			$(".confirmacion").hide();
 		  });
 		  $("#ocultar").click(function(){
-			$(".añadir").hide();
+			$(".eliminar").hide();
 			$(".modificar").hide();
 			$(".visible").show();
 			$(".oculto").hide();
@@ -85,12 +86,12 @@
 	
 	<main>
 		<div class="sub-panel">
-				<h1><a href="categorias.php" >Categorias </a> > <?php echo "<a href=\"categoria.php?id=$cat\">$nombrecategoria " ;?> > <?php echo "<a href=\"opciones.php?id=$id_cat\">$nombresubcategoria " ;?> > <?php echo "<a href=\"opcion.php?id=$id_cat\">$nombre " ;?> </a>
+				<h1><a href="categorias.php" >Categorias </a> > <?php echo "<a href=\"categoria.php?id=$idcategoria\">$nombrecategoria " ;?> > <?php echo "<a href=\"opciones.php?id=$cat\">$nombresubcategoria " ;?> > <?php echo "<a href=\"opcion.php?id=$id_cat\">$nombre " ;?> </a>
 					<span class="añadir"> > Añadir </span>
 					<span class="modificar"> > Modificar </span>
 				</h1>
-				<span class="visible"><a href="#" id="añadir"><img src="icons/añadir.png" alt="añadir nuevo" title="añadir nuevo"/><p>Añadir</p></a></span> 
-				<span class="visible"><a href="#" id="modificar"><img src="icons/modificar2.png" alt="modificar" title="modificar"/><p>Modificar</p></a></span> 
+				<span class="visible"><a href="#" id="eliminar"><img src="icons/eliminar.png" alt="Eliminar" title="Eliminar"/><p>Eliminar</p></a></span> 
+				<span class="visible"><a href="#" id="modificar"><img src="icons/modificar2.png" alt="modificar" title="Modificar"/><p>Modificar</p></a></span> 
 				<span class="oculto"> <a href="#" id="ocultar"><img src="icons/cancelar.png" alt="Cancelar" title="Cancelar"/><p>Cancelar</p> <br/></a></span>
 		</div>
 		<?php
@@ -108,7 +109,29 @@
 			
 			
 		</div>
-		
+		<div class="modificar">
+			<form action="opcion.php?id=<?php echo $id_cat ?>" method="post">
+				<h2>Modificar <?php echo $nombre ?></h2>
+				<p>Nombre:<input type="text" name="nombre" value="<?php echo $nombre; ?>" size="20"/></p>
+				<p>Estado:<select name="estado">
+						<?php IF($estado==1){ ?>
+							<option value="1" selected>Activo</option>
+							<option value="0">Desactivado</option>
+						<?php }
+						ELSE { ?>
+							<option value="1">Activo</option>
+							<option value="0" selected>Desactivado</option>
+					<?php	} ?>
+						
+					</select>
+				</p>
+				<p>Descripción:<input type="text" name="descripcion" value="<?php echo $descrip; ?>" size="70"/></p>
+				<input type="submit" name="modificar" />
+			</form>
+		</div>
+		<div class="eliminar">
+			<p>¿Desea eliminar <?php echo $nombre; ?> de la base de datos de forma permanente? </p>
+		</div>
 	</main>
 </body>
 </html>

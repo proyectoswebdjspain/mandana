@@ -178,7 +178,7 @@ nav ul li > img {
 	padding:10px 5px;
 }
 
-.modificar , .añadir{
+.modificar , .añadir , .eliminar, .ver{
 	display:none;
 	width:100%;
 	text-align:center;

@@ -1,7 +1,7 @@
 
 	<div id="menu_left">
 		<ul>
-			<li><a href=""> Inicio</a></li>
+			<li><a href="index.php"> Inicio</a></li>
 			<li class='active has-sub'><a href="catalogo.php">Catálogo </a>
 				<ul>
 					<li><a href="catalogo.php">Productos</a></li>
@@ -30,6 +30,12 @@
 					<li><a href="">Carritos de compra</a></li>
 					<li><a href="">Atención al cliente</a></li>
 					<li class='last'><a href="">Mensajes predefinidos</a></li>
+				</ul>
+			</li>
+			<li class='active has-sub'><a href="galeria.php">Galeria</a>
+				<ul>
+					<li><a href="imagenes.php">Imagenes</a></li>
+					<li class='last'><a href="videos.php">Videos</a></li>
 				</ul>
 			</li>
 			<li class='active has-sub'><a href="">Reglas de Descuentos</a>

@@ -320,9 +320,37 @@ nav ul li > img {
 	margin-top:0;
 }
 
+#portada {
+	background:white;
+	width:90%;
+	border:1px solid blue;
+	border-radius:4px;
+	margin:auto;
+	margin-top:110px;
+	padding:50px;
+	overflow:auto;
+}
 
+#portada a {
+	text-align:center;
+	margin-right:20px;
+	padding:15px;
+	display:block;
+	width:250px;
+	float:left;
+	text-decoration:none;
+}
 
+#portada a img {
+	width:200px;
+}
 
+#portada a:hover{
+	background:#FBF8EF;
+	border:1px outset;
+	border-radius:20px;
+	width:250px;
+}
 
 
 

@@ -12,7 +12,7 @@
 					<li class='last'><a href="proveedores.php">Proveedores</a></li>
 				</ul>
 			</li>
-			<li class='active has-sub'><a href="">Pedidos</a>
+<!--			<li class='active has-sub'><a href="">Pedidos</a>
 				<ul>
 					<li><a href="">Pedidos</a></li>
 					<li><a href="">Facturas</a></li>
@@ -32,13 +32,14 @@
 					<li class='last'><a href="">Mensajes predefinidos</a></li>
 				</ul>
 			</li>
-			<li class='active has-sub'><a href="galeria.php">Galeria</a>
+-->			<li class='active has-sub'><a href="galeria.php">Galeria</a>
 				<ul>
 					<li><a href="imagenes.php">Imagenes</a></li>
-					<li class='last'><a href="videos.php">Videos</a></li>
+					<li><a href="videos.php">Videos</a></li>
+					<li class='last'><a href="documentos.php">Documentos</a></li>
 				</ul>
 			</li>
-			<li class='active has-sub'><a href="">Reglas de Descuentos</a>
+<!--			<li class='active has-sub'><a href="">Reglas de Descuentos</a>
 				<ul>
 					<li><a href="">Vales descuento</a></li>
 					<li class='last'><a href="">Reglas del catálogo</a></li>
@@ -67,7 +68,7 @@
 			</li>
 			
 			<li><a href="">Estadisticas</a></li>
-			
+-->			
 		</ul>
 
 	</div>

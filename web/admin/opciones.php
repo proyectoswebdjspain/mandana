@@ -264,7 +264,7 @@
 				<output id="list" ></output>
 				
 			</div>
-			<form action="opciones.php?id=<?php echo $id_cat ?>" method="post">
+			<form action="opciones.php?id=<?php echo $id_cat ?>" method="post" enctype="multipart/form-data">
 				<h2>Modificar la Subcategoria > <?php echo $nomcat ?></h2>
 				<p>Nombre:<input type="text" name="nombre" value="<?php echo $nomcat; ?>" size="20"/></p>
 				<p>Estado:<select name="estado">

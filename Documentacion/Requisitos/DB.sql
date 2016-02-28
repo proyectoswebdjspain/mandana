@@ -1,3 +1,25 @@
+CREATE TABLE impuestos (
+	id_imp INTEGER(5) NOT NULL auto_increment,
+	valor INTEGER(2) NOT NULL,
+	PRIMARY KEY (id_imp)
+);
+
+INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('1','8');
+INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('2','10');
+INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('3','21');
+
+
+CREATE TABLE imagenes (
+	id_imagen INTEGER(30) NOT NULL auto_increment,
+	nombre VARCHAR(100) NOT NULL,
+	titulo VARCHAR(100) NOT NULL,
+	alt VARCHAR(100) NOT NULL,
+	tipo VARCHAR(10) NOT NULL,
+	tamanio INTEGER(200) NOT NULL,
+	url VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id_imagen)
+);
+
 CREATE TABLE categorias (
 	id_categoria INTEGER(2) NOT NULL auto_increment,
 	categoria VARCHAR(50) NOT NULL,
@@ -17,11 +39,13 @@ CREATE TABLE sub_categorias (
 	id_sub_categoria INTEGER(3) NOT NULL auto_increment,
 	id_categoria INTEGER(2) NOT NULL,
 	id_imagen INTEGER(20),
+	posicion_imagen VARCHAR(20),
 	sub_categoria VARCHAR(50) NOT NULL,
 	descripcion VARCHAR(1000),
 	visibilidad INTEGER(1) NOT NULL,
 	PRIMARY KEY (id_sub_categoria),
-	CONSTRAINT FK_id_categoria FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) on update cascade
+	CONSTRAINT FK_id_categoria FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) on update cascade,
+	CONSTRAINT FK_id_imagen FOREIGN KEY (id_imagen) REFERENCES imagenes (id_imagen) on update cascade
 );
 
 INSERT INTO `mandana`.`sub_categorias` (`id_sub_categoria`, `id_categoria`, `sub_categoria`, `descripcion`, `visibilidad`) VALUES ('1', '1', 'Personaliza tu Carcasa', '', '1');
@@ -63,15 +87,6 @@ CREATE TABLE productos (
 	CONSTRAINT FK_id_categoria2 FOREIGN KEY (id_categoria) REFERENCES categorias (id_categoria) on UPDATE CASCADE
 );
 
-CREATE TABLE imagenes (
-	id_foto INTEGER(30) NOT NULL auto_increment,
-	titulo VARCHAR(100) NOT NULL,
-	tipo VARCHAR(10) NOT NULL,
-	tamanio INTEGER(200) NOT NULL,
-	posicion VARCHAR(20),
-	url VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id_foto)
-);
 
 CREATE TABLE tallas (
 	id_talla INTEGER(10) NOT NULL auto_increment,
@@ -84,15 +99,6 @@ CREATE TABLE colores (
 	nombre_color
 );
 
-CREATE TABLE impuestos (
-	id_imp INTEGER(5) NOT NULL auto_increment,
-	valor INTEGER(2) NOT NULL,
-	PRIMARY KEY (id_imp)
-);
-
-INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('1','8');
-INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('2','10');
-INSERT INTO `mandana`.`impuestos`(`id_imp`, `valor`) VALUES ('3','21');
 
 CREATE TABLE slider (
 	id_slider INTEGER(10) NOT NULL auto_increment,

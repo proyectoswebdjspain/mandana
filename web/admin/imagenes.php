@@ -1,3 +1,10 @@
+<?php	
+	include("../php/clases.php");
+	include("../php/conexion.php");
+?>
+
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -17,7 +24,31 @@
 	<main>
 		<div class="sub-panel">
 			<h1><a href="galeria.php" >Galeria</a> > <a href="imagenes.php" >Imagenes</a></h1>
+			<span class="visible"><a href="subir.php?imagen=añadir" id="añadir"><img src="icons/añadir.png" alt="añadir nuevo" title="añadir nuevo"/><p>Añadir</p></a></span>  
+				
 		</div>
+		
+		<div id="portada">
+			<?php 
+				$sql = "SELECT * FROM imagenes";
+				$result = mysqli_query($link, $sql);
+				if(mysqli_num_rows($result)==0){
+					echo "No Hay Imagenes";
+				}
+				ELSE{
+					
+			?>
+				<section class="galeria">
+					<a href=""><img src="" alt=""/></a>
+				</section>
+			<?php
+				}
+			?>
+		
+		
+		
+		</div>
+		
 	</main>
 </body>
 </html>

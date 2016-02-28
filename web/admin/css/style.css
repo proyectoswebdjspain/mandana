@@ -68,6 +68,10 @@ nav ul li > img {
 	float:left;
 	
 }
+.sub-panel img{
+	width:40px;
+	
+}
 
 .sub-panel .visible > a{
 	float:right;

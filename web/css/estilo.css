@@ -6,8 +6,10 @@ A:link, A:visited, A:active { text-decoration: none; color: white; }
 
 
 /*----------------- MENU ------------------*/
-
-
+.megamenu.skyblue li div.megapanel {height: 250px;width: 95%;}
+.megamenu li div.megapanel div.row div.col1 div.h_nav ul {min-width: 220px;}
+.megamenu .megapanel img {max-width: 180px;}
+.megamenu.skyblue > li > a {margin: 10px 0;padding: 0 20px;border-left:1px solid white;border-right:1px solid white;}
 
 
 /*----------------- SLIDER ------------------*/

@@ -87,7 +87,7 @@ body{
 	color: #000;
 	line-height: 1.8em;
 	text-transform:capitalize;
-	margin-bottom: 4%;
+	margin: 0;
 }
 .h_nav h4.top{
 	margin-top: 12%;
@@ -99,7 +99,6 @@ body{
 	display:block;
 	font-size: 0.8125em;
 	color:#777;
-	text-transform:capitalize;
 	line-height:2em;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;

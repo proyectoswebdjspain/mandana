@@ -1,5 +1,6 @@
+*{box-sizing:border-box;}
 .megamenu{margin:auto;padding:0;width:800px;list-style:none;position:relative;}
-.megamenu li{margin-bottom:-5px;display:inline}
+.megamenu li{margin-bottom:-5px;display:inline;margin: 0 -2px;}
 .megamenu>li>a{float:left;padding:8px 20px;text-decoration:none;text-transform:capitalize;font-size:0.85em; -webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -74,8 +75,5 @@ skyblue .megapanel img:hover,.skyblue form.contact input[type="text"]:focus,.sky
 	.megapanel .row{margin-top:0}.black{background:#222}
 	}
 /* start megamenu colors */
-.skyblue li a.color1:hover{
-	background:black;
-	color: white;
-}
+.skyblue li a.color1:hover{border-left:1px solid black;border-right:1px solid black;}
 

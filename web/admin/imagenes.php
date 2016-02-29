@@ -37,11 +37,18 @@
 				}
 				ELSE{
 					
+					WHILE($row=mysqli_fetch_array($result)){
+						$nombre = $row['titulo'];
+						$url = $row['url'];
+						$alt = $row['alt'];
+					
 			?>
 				<section class="galeria">
-					<a href=""><img src="" alt=""/></a>
+					<a href=""><img <?php echo"src=\"$url\" alt=\"$alt\" ";?> /><p><?php echo $nombre; ?></p></a>
+					
 				</section>
 			<?php
+					}
 				}
 			?>
 		

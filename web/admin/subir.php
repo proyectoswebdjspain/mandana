@@ -1,3 +1,54 @@
+<?php
+	include('includes/conexion.php');
+
+
+		if(ISSET($_REQUEST['upimagen'])){
+			$local = $_FILES['archivo']['name'];
+			$remoto = $_FILES['archivo']['tmp_name'];
+			$tipo = $_FILES['archivo']['type'];
+			$extension = explode(".", $local);
+			$alt = $_REQUEST['alt'];
+			$titulo = $_REQUEST['titulo'];
+			$nombre = $_REQUEST['nombre'];
+		  
+		  
+			IF($tipo == "image/jpeg" || $tipo == "image/png" || $tipo == "image/gif" ){
+				// La variable para la BD
+				$ruta = "updates/imagenes/" . $local;
+			
+				$sql= "SELECT url FROM imagenes";
+				$result=mysqli_query($link, $sql);
+				$row = mysqli_fetch_array($result);
+				if($ruta==$row['url']){
+					$local=$extension[0].'-1.'.$extension[1];
+					$ruta = "updates/imagenes/" . $local;
+				}
+				
+				
+				
+				
+				
+				if(move_uploaded_file($remoto, $ruta))
+				{
+					$sql= "INSERT INTO `mandana`.`imagenes`(`id_imagen`, `nombre`, `titulo`, `alt`, `tipo`, `tamanio`, `url`) VALUES ('','$nombre','$titulo','$alt','$tipo','','$ruta')";
+					$result=mysqli_query($link, $sql);
+					mysqli_close($link);
+				}
+				else{
+				  echo "Error al Mover el archivo";
+				
+			  }
+			}
+		}
+	
+
+
+
+
+
+?>
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -34,8 +85,8 @@
 			<div class="imagen">
 				<output id="list" ></output>
 			</div>
-				<form action="subir.php?subir=imagen" method="POST" enctype="multipart/form-data">
-				<p>Selecionar Imagen <input type="file" id="files" name="files[]" />	</p>
+				<form action="subir.php" method="POST" enctype="multipart/form-data">
+				<p>Selecionar Imagen <input type="file" id="files" name="archivo" />	</p>
 				
 				
 				 <script>
@@ -67,7 +118,8 @@
 				<p>Nombre: <input type="text" value="" name="nombre" /></p>
 				<p>Texto Alternativo: <input type="text" value="" name="alt" /></p>
 				<p>Titulo: <input type="text" value="" name="titulo" /></p>
-				<p><input type="button" value="Subir"/></p>
+				<p><input type="submit" value="Subir" name="upimagen"/></p>
+			</form>
 			</div>
 
 		<?php	

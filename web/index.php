@@ -61,7 +61,7 @@
 </head>
 <body>
 	<?php 
-		include ("includes/menu.html");
+		include ("includes/menu.php");
 	?>
 <img src="img/sudadera.png" alt="" />
 	<main>

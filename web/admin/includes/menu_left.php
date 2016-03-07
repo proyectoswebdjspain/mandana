@@ -12,7 +12,12 @@
 					<li class='last'><a href="proveedores.php">Proveedores</a></li>
 				</ul>
 			</li>
-<!--			<li class='active has-sub'><a href="">Pedidos</a>
+			<li class='active has-sub'><a href="slider.php">Slider </a>
+				<ul>
+					<li><a href="slider.php">Gestionar</a></li>
+				</ul>
+			</li>
+<!--		<li class='active has-sub'><a href="">Pedidos</a>
 				<ul>
 					<li><a href="">Pedidos</a></li>
 					<li><a href="">Facturas</a></li>

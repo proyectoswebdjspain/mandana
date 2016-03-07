@@ -8,10 +8,10 @@
 		$visibilidad = $_REQUEST['estado'];
 		$sql="UPDATE sub_categorias SET descripcion = '$descrip', sub_categoria = '$nombre', visibilidad = '$visibilidad' WHERE id_sub_categoria = '$id_cat' ";
 		if(mysqli_query($link, $sql)){
-			$mensaje="Descripción modificada con extio <img src=\"icons/check.png\" alt=\"check\"/>";
+			$mensaje="Modificación con exito <img src=\"icons/check.png\" alt=\"check\"/>";
 		}
 		ELSE{
-			$mensaje="Error al modificar la descripcion";
+			$mensaje="Error al modificar ";
 		}
 		
 	}
@@ -28,7 +28,7 @@
 		else{
 			$sql="INSERT INTO `mandana`.`opciones` (`id_opcion`, `id_sub_categoria`, `opcion`, `descripcion`, `estado`) VALUES ('', '$id_cat', '$nombre', '$descrip', '$estado')";
 			if(mysqli_query($link, $sql)){
-				$mensaje="Opción añadida con extio <img src=\"icons/check.png\" alt=\"check\"/>";
+				$mensaje="Opción añadida con exito <img src=\"icons/check.png\" alt=\"check\"/>";
 			}
 			ELSE{
 				$mensaje="Error al añadir Opción <img src=\"icons/cancelar.png\" alt=\"error\"/>";
@@ -280,48 +280,6 @@
 					</select>
 				</p>
 				<p>Descripción:<input type="text" name="descripcion" value="<?php echo $detacat; ?>" size="70"/></p>
-				<p>Mostrar imagen <input type="radio" name="ver" value="no" checked id="verno"/>NO<input type="radio" name="ver" value="si" id="versi"/>SI</p>
-				<div class="ver">
-					<p>Selecionar Imagen <input type="file" id="files" name="files[]" multiple />	</p>
-					
-					
-					 <script>
-							  function archivo(evt) {
-								  var files = evt.target.files; // FileList object
-							 
-								  // Obtenemos la imagen del campo "file".
-								  for (var i = 0, f; f = files[i]; i++) {
-									//Solo admitimos imágenes.
-									if (!f.type.match('image.*')) {
-										continue;
-									}
-							 
-									var reader = new FileReader();
-							 
-									reader.onload = (function(theFile) {
-										return function(e) {
-										  // Insertamos la imagen
-										 document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-										};
-									})(f);
-							 
-									reader.readAsDataURL(f);
-								  }
-							  }
-							 
-							  document.getElementById('files').addEventListener('change', archivo, false);
-					  </script>
-					
-					
-					
-					<p>Posicion de la imagen :
-						<select name="posicion_img">
-							<option value="abajo" selected>Abajo</option>
-							<option value="derecha">Derecha</option>
-							<option value="izquierda">Izquierda</option>
-						</select>
-					</p>
-				</div>
 				<input type="submit" name="modificar" />
 			</form>
 		</div>

@@ -1,0 +1,37 @@
+/*-------------------------------------------*/
+/*----------------- MANDANA ------------------*/
+/*-------------------------------------------*/
+
+A:link, A:visited, A:active { text-decoration: none; color: white; }
+
+
+/*----------------- MENU ------------------*/
+.megamenu.skyblue li div.megapanel {height: 250px;width: 95%;}
+.megamenu li div.megapanel div.row div.col1 div.h_nav ul {min-width: 220px;}
+.megamenu .megapanel img {max-width: 180px;}
+.megamenu.skyblue > li > a {margin: 10px 0;padding: 0 20px;border-left:1px solid white;border-right:1px solid white;}
+
+
+/*----------------- SLIDER ------------------*/
+
+
+/*----------------- FOOTER ------------------*/
+
+.datospie {background:black; color:white;width:100%;position:relative;overflow:auto;}
+.datospie > div {width:33.33%; text-align:center;display: inline-block;float:left;}
+.listapie {text-align: left;padding-left: 43%;padding-top:45px;}
+.listapie ul li a {display: inline-block;color:white;}
+.datospie div div.listapie h3 {margin:0;}
+
+
+.datospie div.contactopie {width:100%; text-align:center;display: inline-block;}
+.contactopie a {width:33%;display: inline-block;padding: 20px 0;font-size: 150%;}
+.datospie div.contactopie div {width:33%;display: inline-block;padding: 0;}
+.datospie div.contactopie div a {display: inline-block;padding:0;width:auto;}
+.contactopie img {width: 30px;}
+.datospie div.contactopie div a img {padding: 0 5px;width: 50px;}
+.datospie div.contactopie div h5 {margin:0;}
+
+
+.copy {background:black;}
+

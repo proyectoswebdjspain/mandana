@@ -1,0 +1,367 @@
+@charset "UTF-8";
+*{box-sizing:border-box;}
+
+html {
+	height:100%;
+}
+
+body {margin:0px; border:0;
+	width:100%;
+	background:#D8D8D8;
+;}
+
+a {text-decoration:none;}
+
+ul {list-style:none;
+padding:0;
+	}
+
+header {
+	background:#08298A;
+	overflow:auto;
+	position:fixed;
+	width:100%;
+	height:60px;
+}
+
+main {
+	float:left;
+	padding:0 0 0 250px;
+	margin:60px 0 0 0;
+	width:100%;
+}
+
+/* Menu superior */
+
+nav ul li{
+	float:left;
+}
+
+nav a {
+	color:white;
+}
+
+nav a > img {
+	margin-left:20px;
+}
+
+nav ul li > img {
+	margin-left:20px;
+}
+/* Main */
+
+.box-pag{
+	width:100%;
+	overflow:auto;
+}
+
+
+.sub-panel {
+	overflow:none;
+	float:left;
+	width:100%;
+	border-bottom:1px solid blue;
+	padding:0 10px;
+	background:white;
+}
+.sub-panel h1{
+	float:left;
+	
+}
+.sub-panel img{
+	width:40px;
+	
+}
+
+.sub-panel .visible > a{
+	float:right;
+	display:block;
+	text-align:center;
+	margin-left:20px;
+	margin-top:5px;
+}
+.sub-panel h1 > a {
+	color:black;
+}
+
+.sub-panel p{
+	margin:0;
+	padding:0;
+}
+
+.sub-panel .numero {
+	border:1px solid silver;
+	border-radius:20px;
+	text-align:center;
+	font-size:15px;
+	padding:5px 10px;
+	margin-left:3px;
+}
+
+.sub-panel .numero p{
+	margin:0;
+	padding:0;
+	width:20px;
+	display:inline;
+	text-align:center;
+}
+
+
+/* Main Sub Menu */
+
+.sub_menu {
+	width:200px;
+	float:left;
+	margin: 20px 0 0 10px;
+}
+
+.sub_menu li {
+}
+
+.sub_menu ul li a {
+	text-align:center;
+	border:1px solid silver;
+	padding:5px;
+	background:white;
+	display:block;
+	color:black;
+}
+
+.sub_menu li a:hover {
+	background:silver;
+	cursor:pointer;
+	border:1px solid black;
+}
+
+.sub_menu li a:focus {
+	background:#0174DF;
+	cursor:pointer;
+	border:1px solid black;
+}
+
+ 
+ /*Contenido del main */
+
+#opcion {
+	float:left;
+	overflow:auto;
+	width:100%;
+	border-bottom:1px solid silver;
+} 
+ 
+#opcion h2{
+	width:50%;
+	float:left;
+	font-size:12px;
+	padding:0 5px;
+}
+ 
+#opcion img{
+	float:left;
+	width:30px;
+	margin-left:10px;
+} 
+ 
+.listado{
+	overflow-x:auto;
+}
+.listado table{
+	border-collapse:collapse;
+	margin:auto;
+}
+
+.listado p{
+	margin:0px;
+}
+.listado td{
+	text-align:center;
+}
+
+.listado .agregar td{ 
+	background:#E0F8E0;
+	padding:10px 5px;
+}
+
+.modificar , .añadir , .eliminar, .ver{
+	display:none;
+	width:100%;
+	text-align:center;
+	padding-top:10px;
+}
+
+.oculto {
+	display:none;
+	text-align:center;
+	overflow:auto;
+}
+
+.oculto a {
+	width:60px;
+	display:block;
+	float:right;
+	margin-top:5px;
+}
+
+.visible {
+	overflow:auto;
+	width:100%;
+	padding-top:10px;
+}
+.fondo table{
+	margin:auto;
+}
+
+.fondo table input {
+	margin:auto;
+	text-align:center;
+}
+
+.fondo table tr {
+	padding:10px;
+}
+
+
+.fondo table th{
+	text-align:right;
+	background:#CEE3F6;
+	
+}
+
+.fondo {
+	background:white;
+	width:70%;
+	margin: 20px 20px;
+	border-radius:5px;
+	overflow:auto;
+	float:left;
+	border:1px solid #ccc;
+	padding:0 2px 20px 2px;
+}
+
+.detalles {
+	width:90%;
+	margin:auto;
+}
+
+.detalles textarea {
+	width:500px;
+	height:150px;
+}
+
+.detalles p {
+	text-align:center;
+}
+
+.fila1 {
+	width:90%;
+	margin:auto;
+	overflow:auto;
+	margin-bottom:10px;
+}
+
+.fila1 .id, .fila1 .nombre, .fila1 .descrip, .fila1 .subcat {
+	float:left;
+	padding:10px;
+	border:1px solid silver;
+	text-align:center;
+	height:52px;
+	font-size:16px;
+}
+
+.fila {
+	margin:auto;
+	width:90%;
+	overflow:auto;
+	margin-top:3px;
+}
+
+.fila a{
+	float:left;
+	display:block;
+	width:100%;
+	padding:10px;
+	border-radius:5px;
+	background:#EFF5FB;
+	margin:auto;
+	text-align:center;
+	color:#1C1C1C;
+}
+
+.fila a:hover{
+	background:#CEE3F6;
+}
+
+.id {
+	width:8%;
+	float:left;
+}
+
+.nombre {
+	width:15%;
+	float:left;
+}
+
+.descrip {
+	width:65%;
+	float:left;
+	font-size:12px;
+}
+
+.subcat {
+	width:12%;
+	float:left;
+}
+
+.confirmacion {
+	border:2px solid #0080FF;
+	background:#81BEF7;
+	width:100%;
+	float:left;
+	text-align:center;
+}
+
+.confirmacion p {
+	margin-top:0;
+}
+
+#portada {
+	background:white;
+	width:90%;
+	border:1px solid blue;
+	border-radius:4px;
+	margin:auto;
+	margin-top:110px;
+	padding:50px;
+	overflow:auto;
+}
+
+#portada a {
+	text-align:center;
+	margin-right:20px;
+	padding:15px;
+	display:block;
+	width:250px;
+	float:left;
+	text-decoration:none;
+}
+
+#portada a img {
+	width:200px;
+}
+
+#portada a:hover{
+	background:#FBF8EF;
+	border:1px outset;
+	border-radius:20px;
+	width:250px;
+}
+
+
+
+
+
+
+
+
+
+

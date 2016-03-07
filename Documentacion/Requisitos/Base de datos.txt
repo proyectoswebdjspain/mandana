@@ -1,0 +1,35 @@
+Base de datos frontend
+--------------------------------------
+
+-Moviles
+	-ID
+	-Nombre
+	-Categoria
+	-Modelo
+	-Precio
+	-Estado
+	-Stock
+
+-Categorias
+	-ID
+	-Nombre
+
+
+
+
+
+
+
+
+Base de datos BackEnd
+--------------------------------------
+
+
+
+
+
+
+
+
+
+

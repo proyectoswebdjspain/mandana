@@ -20,6 +20,16 @@ CREATE TABLE imagenes (
 	PRIMARY KEY (id_imagen)
 );
 
+CREATE TABLE slider (
+	id_slider INTEGER(10) NOT NULL auto_increment,
+	nombre_slider VARCHAR(30),
+	descripcion VARCHAR(500),
+	estado INTEGER(2),
+	imagenes VARCHAR(500),
+	PRIMARY KEY (id_slider)
+);
+
+
 CREATE TABLE categorias (
 	id_categoria INTEGER(2) NOT NULL auto_increment,
 	categoria VARCHAR(50) NOT NULL,
@@ -111,13 +121,7 @@ CREATE TABLE colores (
 );
 
 
-CREATE TABLE slider (
-	id_slider INTEGER(10) NOT NULL auto_increment,
-	nombre_slider VARCHAR(30),
-	descripcion VARCHAR(500),
-	estado INTEGER(2),
-	
-);
+
 
 
 

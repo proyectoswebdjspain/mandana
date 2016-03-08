@@ -10,81 +10,39 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" href="images/favicon.ico" >
 <link rel="icon" type="image/gif" href="images/animated_favicon1.gif" >
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript">
-        $(document).ready(function() {
-            $(".dropdown img.flag").addClass("flagvisibility");
-
-            $(".dropdown dt a").click(function() {
-                $(".dropdown dd ul").toggle();
-            });
-                        
-            $(".dropdown dd ul li a").click(function() {
-                var text = $(this).html();
-                $(".dropdown dt a span").html(text);
-                $(".dropdown dd ul").hide();
-                $("#result").html("Selected value is: " + getSelectedValue("sample"));
-            });
-                        
-            function getSelectedValue(id) {
-                return $("#" + id).find("dt a span.value").html();
-            }
-
-            $(document).bind('click', function(e) {
-                var $clicked = $(e.target);
-                if (! $clicked.parents().hasClass("dropdown"))
-                    $(".dropdown dd ul").hide();
-            });
-
-
-            $("#flagSwitcher").click(function() {
-                $(".dropdown img.flag").toggleClass("flagvisibility");
-            });
-        });
-     </script>
+<script type="text/javascript" src="js/jquery.min.js">
+</script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="slider/jquery.bxslider.min.js"></script>
+<link href="slider/jquery.bxslider.css" rel="stylesheet" />
 <!-- start menu -->     
 <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!-- end menu -->
-<!-- top scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-   <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-			});
+<script>$(document).ready(function(){$(".megamenu").megamenu();});
+	$(document).ready(function(){
+		$('.bxslider').bxSlider({
+			mode: 'fade',
+			auto: true,
 		});
-	</script>
+	});
+
+</script>
+
 </head>
 <body>
 	<?php 
 		include ("includes/menu.php");
 	?>
-<img src="img/sudadera.png" alt="" />
 	<main>
-	
+		<ul class="bxslider">
+		  <li><img src="slider/images/Paisaje con Logo.png" /></li>
+		  <li><img src="slider/images/Fundas.png" /></li>
+		  <li><img src="slider/images/Sudadera Negra.png" /></li>
+		  <li><img src="slider/images/Camiseta Negra.png" /></li>
+		</ul>
 	</main>
     <?php
 		include("includes/footer.html");
 		?>
-       <script type="text/javascript">
-			$(document).ready(function() {
-			
-				var defaults = {
-		  			containerID: 'toTop', // fading element id
-					containerHoverID: 'toTopHover', // fading element hover id
-					scrollSpeed: 1200,
-					easingType: 'linear' 
-		 		};
-				
-				
-				$().UItoTop({ easingType: 'easeOutQuart' });
-				
-			});
-		</script>
-        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+
 </body>
 </html>
